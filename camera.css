@@ -1,0 +1,240 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Barra di navigazione */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fa9c9c;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.toolbar .menu a:hover {
+    background-color: #333;
+    color: #ffffff;
+    transform: scale(1.1);
+    transition: background-color 0.3s, transform 0.3s ease;
+
+}
+
+.menu a {
+    display: inline-block; /* Necessario per trasformazioni */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    color: #333; /* Colore del testo */
+    transition: transform 0.3s ease, color 0.3s ease; /* Anima il cambiamento */
+}
+
+.menu a:hover {
+    transform: scale(1.2); /* Aumenta del 20% */
+    color: #ff5733; /* Cambia colore (opzionale) */
+}
+
+
+
+.menu-toggle {
+    display: none; /* Nascondi il pulsante per impostazione predefinita */
+}
+
+
+#parola1, #parola2, #parola3, #parola4 ,#parola5, #parola6 {
+    font-weight: bold;
+}
+
+
+
+
+/* Logo del sito */
+#toolbar1 .logo {
+    font-size: 1.5em;
+    font-weight: 900;
+}
+
+/* Layout del menu */
+#toolbar1 .menu {
+    display: flex;
+    gap: 10px; /* Mantiene lo spazio costante tra gli elementi */
+}
+
+/* Menu Toggle (Bottone per dispositivi mobili) */
+.menu-toggle {
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;  /* Nasconde il bottone di default */
+}
+
+/* Menu visibile quando il bottone viene cliccato */
+.menu.active {
+    display: block;
+}
+
+/* Logo del sito */
+#titolo {
+    font-size: 24px;
+    color: #333;
+    padding: 10px;
+    font-weight: 900;
+}
+
+
+
+
+  
+@keyframes fadeInLeft {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    0% { opacity: 0; transform: translateX(50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+
+
+
+
+
+
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Rendi visibile il pulsante */
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Nascondi il menu di default per dispositivi mobili */
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #f8f8f8;
+        padding: 10px;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Mostra il menu quando ha la classe `show` */
+    .menu.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin-top: 43px;
+        background: #333;
+        width: auto;
+        border-radius: 10px;
+    }
+
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .toolbar .menu a {
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        width: 89%;
+    }
+
+    /* Rende il layout della hero section verticale sui dispositivi mobili */
+    .hero {
+        flex-direction: row;
+        text-align: center;
+        display: flex
+;
+        align-content: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+
+    .hero-text {
+        /* max-width: 50%; */
+        max-width: 100%;
+        animation: fadeInLeft 1.5s ease;
+    }
+
+    #minititolo {
+        text-align: center;
+
+        max-width: 100%;
+        font-size: larger;
+    }
+
+    #bordo1 {
+        display: flex
+    ;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+        box-shadow: 5px 5px 15px rgb(0 0 0 / 40%);
+        padding: 10px;
+        background-color: #fa9c9c;
+        border-radius: 8px;
+        margin-bottom: 40px;
+        margin-top: 40px;
+        flex-direction: column;
+        width: 340px;
+    }
+
+    #toolbar2 {
+        display: flex
+    ;
+        background-color: #333;
+        padding: 20px;
+        color: white;
+        gap: 20px;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+
+}
+
+
+
+
+
+/* Mostra il menu direttamente in modalità desktop */
+@media (min-width: 769px) {
+    .menu {
+        display: flex; /* Mostra il menu orizzontalmente */
+        flex-direction: row;
+        background: none;
+        position: static;
+        box-shadow: none;
+    }
+}
